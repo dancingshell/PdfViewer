@@ -9,6 +9,7 @@ import {
   View,
 } from 'react-native';
 import { WebBrowser } from 'expo';
+import PdfViewer from '../components/PdfViewer';
 
 import { MonoText } from '../components/StyledText';
 
