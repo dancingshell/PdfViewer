@@ -6,6 +6,7 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import ViewerScreen from '../screens/Viewer';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -53,8 +54,23 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const MarkupStack = createStackNavigator({
+  Markup: ViewerScreen,
+});
+
+MarkupStack.navigationOptions = {
+  tabBarLabel: 'Markup',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-brush' : 'md-draw'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
+  MarkupStack,
   HomeStack,
   LinksStack,
-  SettingsStack,
+  SettingsStack
 });
