@@ -6,6 +6,8 @@ import TabBarIcon from '../components/TabBarIcon';
 import HomeScreen from '../screens/HomeScreen';
 import LinksScreen from '../screens/LinksScreen';
 import SettingsScreen from '../screens/SettingsScreen';
+import TouchPlayground from '../screens/TouchPlayground';
+import SVGPdf from '../screens/SVGPdf';
 
 const HomeStack = createStackNavigator({
   Home: HomeScreen,
@@ -53,8 +55,38 @@ SettingsStack.navigationOptions = {
   ),
 };
 
+const SVGStack = createStackNavigator({
+  SVG: TouchPlayground,
+});
+
+SVGStack.navigationOptions = {
+  tabBarLabel: 'SVG',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  ),
+};
+
+const SVGPDFStack = createStackNavigator({
+  SVGPDF: SVGPdf,
+});
+
+SVGPDFStack.navigationOptions = {
+  tabBarLabel: 'SVGPDF',
+  tabBarIcon: ({ focused }) => (
+    <TabBarIcon
+      focused={focused}
+      name={Platform.OS === 'ios' ? 'ios-options' : 'md-options'}
+    />
+  ),
+};
+
 export default createBottomTabNavigator({
   HomeStack,
   LinksStack,
   SettingsStack,
+  SVGStack,
+  SVGPDFStack,
 });

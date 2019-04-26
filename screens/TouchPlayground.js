@@ -11,6 +11,9 @@ const touchPlaygroundStyle = {
 };
 
 export default class TouchPlayground extends Component {
+  static navigationOptions = {
+    title: 'SVG',
+  };
   constructor(props) {
     super(props);
     this.state = {
@@ -64,18 +67,14 @@ export default class TouchPlayground extends Component {
         </Text>
 
         <Svg height="500" width="300" viewBox="0 0 100 100">
-          <Circle
-            on
-            cx="50"
-            cy="50"
-            r={this.state.scale * 45}
-            stroke="blue"
-            strokeWidth="2.5"
-            fill="green"
-          />
+          {this.circle()}
         </Svg>
 
       </View>
     );
+  }
+
+  circle() {
+    return <Circle on cx="50" cy="50" r={this.state.scale * 45} stroke="blue" strokeWidth="2.5" fill="green" />;
   }
 }
