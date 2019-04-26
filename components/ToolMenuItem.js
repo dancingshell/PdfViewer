@@ -19,8 +19,8 @@ export default function ToolMenuIcon({icon, label, focused, onClick}) {
         justifyContent: 'center',
         alignItems: 'center'
       }}>
-        <Icon.Ionicons
-          name={Platform.OS === "ios" ? `ios-${icon}` : `md-${icon}`}
+        <Icon.FontAwesome
+          name={icon}
           size={26}
           color={focused ? Colors.tabIconSelected : Colors.tabIconDefault}
         />
