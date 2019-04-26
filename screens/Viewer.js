@@ -1,12 +1,11 @@
 import React from 'react';
-import {View, Text, Button, Platform, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet} from 'react-native';
 import { connect } from 'react-redux';
-import PDFViewer from './../screens/SVGPdf';
+import Slider from "react-native-slider";
+import MarkupViewer from './../components/MarkupViewer';
 import MainMenu from '../Menus/MainMenu';
 import ToolBarWrapper from "../components/ToolBarWrapper";
-import Slider from "react-native-slider";
 import {Icon} from "expo";
-import PdfViewer from "../components/PdfViewer";
 
 class Viewer extends React.Component {
   state = {
@@ -22,7 +21,7 @@ class Viewer extends React.Component {
   render() {
     return (
       <View style={{flex: 1}}>
-        <PdfViewer/>
+        <MarkupViewer/>
         <ToolbarContainer>
           {
             this.state.attributesActive && (
